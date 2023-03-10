@@ -1,0 +1,3894 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Recibo</title>	
+		<meta charset="UTF-8">
+		<link rel = "stylesheet" href = "Complementos\Css\Recibo.css" type = "text/css">
+		<link rel = "icon" type = "image/png" href = "Complementos\Imagenes\Icono.ico" />
+	</head>
+	
+	<body>
+	
+	<br>
+	
+	<center><img src = "Complementos\Imagenes\Munequeria_Chuky.jpg"></center>
+	
+	<br>
+	<br>
+	
+	<center>
+	
+	<table border = "1">
+	<caption><img src = "Complementos\Imagenes\Recibo.jpg"></caption>
+	
+	<tr>
+    <td>Nombre Del Usuario: <?="<font color = 'blue'>".$user['nombre']."  "."</font>"?>  </td>
+	<td>Apellido Del Usuario: <?="<font color = 'blue'>".$user['apellido']."  "."</font>"?>  </td>
+	</tr>
+	
+	<tr>
+	<td>Documento Cc/Ti: <?="<font color = 'blue'>".$user['cedula']."  "."</font>"?>  </td>
+    <td>Numero Celular/Telefonico: <?="<font color = 'blue'>".$user['numero']."  "."</font>"?>  </td>
+	</tr>
+	
+	<tr>
+	<td>Correo Electronico: <?="<font color = 'blue'>".$user['email']."  "."</font>"?>  </td>
+	<td>Dirrecion : <?="<font color = 'blue'>".$user['direcion']."  "."</font>"?>  </td>
+	</tr>
+	
+	</table>
+	
+	<br>
+	
+	</center>
+<div id = "general">
+	<?php
+
+		$a1 = 0;
+		
+						if($_REQUEST['serial']=="0"){
+								echo "Producto No Encontrado<br>";				
+								}
+						else if($_REQUEST['serial']<"5600"){
+							echo "Producto No Encontrado<br>";	
+						}						//Muñecos De Peluche	
+						//Oso
+						else if($_REQUEST['serial']=="5610"){
+						echo "<br>Mu&ntilde;eco De Peluche "."<font color = 'Blue'>"."Oso"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="15000"){
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"15000"){
+						$a = $_REQUEST['pago']-15000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"15000"){
+							
+						$a = $_REQUEST['pago']-15000;
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Perro
+						else if($_REQUEST['serial']=="5620"){
+						echo "Mu&ntilde;eco De Peluche "."<font color = 'Blue'>"."Perro"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="15000"){
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"15000"){
+						$a = $_REQUEST['pago']-15000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"15000"){				
+						$a = $_REQUEST['pago']-15000;
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Elefante
+						else if($_REQUEST['serial']=="5630"){
+						echo "Mu&ntilde;eco De Peluche "."<font color = 'Blue'>"."Elefante"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="15000"){
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"15000"){
+						$a = $_REQUEST['pago']-15000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"15000"){				
+						$a = $_REQUEST['pago']-15000;
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Gato
+						else if($_REQUEST['serial']=="5640"){
+						echo "Mu&ntilde;eco De Peluche "."<font color = 'Blue'>"."Gato"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="15000"){
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"15000"){
+						$a = $_REQUEST['pago']-15000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"15000"){				
+						$a = $_REQUEST['pago']-15000;
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Jirafa
+						else if($_REQUEST['serial']=="5650"){
+						echo "Mu&ntilde;eco De Peluche "."<font color = 'Blue'>"."Jirafa"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="15000"){
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"15000"){
+						$a = $_REQUEST['pago']-15000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"15000"){				
+						$a = $_REQUEST['pago']-15000;
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Conejo
+						else if($_REQUEST['serial']=="5660"){
+						echo "Mu&ntilde;eco De Peluche "."<font color = 'Blue'>"."Conejo"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="15000"){
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"15000"){
+						$a = $_REQUEST['pago']-15000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"15000"){				
+						$a = $_REQUEST['pago']-15000;
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Tigre
+						else if($_REQUEST['serial']=="5670"){
+						echo "Mu&ntilde;eco De Peluche "."<font color = 'Blue'>"."Tigre"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="15000"){
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"15000"){
+						$a = $_REQUEST['pago']-15000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"15000"){				
+						$a = $_REQUEST['pago']-15000;
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Leon
+						else if($_REQUEST['serial']=="5680"){
+						echo "Mu&ntilde;eco De Peluche "."<font color = 'Blue'>"."Leon"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="15000"){
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"15000"){
+						$a = $_REQUEST['pago']-15000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"15000"){				
+						$a = $_REQUEST['pago']-15000;
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Mono
+						else if($_REQUEST['serial']=="5690"){
+						echo "Mu&ntilde;eco De Peluche "."<font color = 'Blue'>"."Mono"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="15000"){
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"15000"){
+						$a = $_REQUEST['pago']-15000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"15000"){				
+						$a = $_REQUEST['pago']-15000;
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Koala
+						else if($_REQUEST['serial']=="5700"){
+						echo "Mu&ntilde;eco De Peluche "."<font color = 'Blue'>"."Koala"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="15000"){
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"15000"){
+						$a = $_REQUEST['pago']-15000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"15000"){				
+						$a = $_REQUEST['pago']-15000;
+						
+						echo "<br><br>";
+						echo "Montaje del mu&ntilde;eco: 5000<br>";
+						echo "Mano factura: 5000<br>";
+						echo "Envio: 5000<br>";
+						echo "------------------------<br>";
+						echo "Para un total de: 15000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+						else if($_REQUEST['serial']<"5701"){
+							echo"Producto No Encontrado<br>";	
+						}
+						
+						else if($_REQUEST['serial']<"6009"){
+							echo"Producto No Encontrado<br>";	
+						}
+						
+						//Muñecos Historico
+						//Abraham Liccon
+						else if($_REQUEST['serial']=="6010"){
+						echo "<br>Mu&ntilde;eco Historico "."<font color = 'Blue'>"."Abraham Liccon"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){
+							
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Charles Chaplin
+						else if($_REQUEST['serial']=="6020"){
+						echo "Mu&ntilde;eco Historico "."<font color = 'Blue'>"."Charles Chaplin"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+						
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Albert Einstein
+						else if($_REQUEST['serial']=="6030"){
+						echo "Mu&ntilde;eco Historico"."<font color = 'Blue'>"."Albert Einstein"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Cristoba Colon
+						else if($_REQUEST['serial']=="6040"){
+						echo "Mu&ntilde;eco Historico "."<font color = 'Blue'>"."Cristoba Colon"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Marionetas De Papel
+						else if($_REQUEST['serial']=="6050"){
+						echo "Mu&ntilde;eco Historico "."<font color = 'Blue'>"."Marionetas De Papel"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Muñeco De Los 80
+						else if($_REQUEST['serial']=="6060"){
+						echo "Mu&ntilde;eco Historico "."<font color = 'Blue'>"."Muñeco De Los 80"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Muñeco De Los 70
+						else if($_REQUEST['serial']=="6070"){
+						echo "Mu&ntilde;eco Historico "."<font color = 'Blue'>"."Muñeco De Los 70"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Muñeco De Trapo
+						else if($_REQUEST['serial']=="6080"){
+						echo "Mu&ntilde;eco Historico "."<font color = 'Blue'>"."Muñeco De Trapo"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Titere De Madera
+						else if($_REQUEST['serial']=="6090"){
+						echo "Mu&ntilde;eco Historico "."<font color = 'Blue'>"."Titere De Madera"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Familia Hecha En Madera
+						else if($_REQUEST['serial']=="6100"){
+						echo "Mu&ntilde;eco Historico "."<font color = 'Blue'>"."Familia Hecha En Madera"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				
+						else if($_REQUEST['serial']<"6101"){
+							echo"Producto No Encontrado<br>";	
+						}
+						
+						else if($_REQUEST['serial']<"7809"){
+							echo"Producto No Encontrado<br>";	
+						}
+						
+						//Muñecos De Accion
+						//Historieta Marvel Comics
+						else if($_REQUEST['serial']=="7810"){
+						echo "<br>Mu&ntilde;eco De Accion "."<font color = 'Blue'>"."Historieta Marvel Comics"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){
+							
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Caricaturas Dc Comics
+						else if($_REQUEST['serial']=="7820"){
+						echo "Mu&ntilde;eco De Accion "."<font color = 'Blue'>"."Caricaturas Dc Comics"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Caricaturas
+						else if($_REQUEST['serial']=="7830"){
+						echo "Mu&ntilde;eco De Accion"."<font color = 'Blue'>"."Caricaturas"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Coleccion
+						else if($_REQUEST['serial']=="7840"){
+						echo "Mu&ntilde;eco De Accion "."<font color = 'Blue'>"."Coleccion"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Anime
+						else if($_REQUEST['serial']=="7850"){
+						echo "Mu&ntilde;eco De Accion "."<font color = 'Blue'>"."Anime"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Video Juegos
+						else if($_REQUEST['serial']=="7860"){
+						echo "Mu&ntilde;eco De Accion "."<font color = 'Blue'>"."Video Juegos"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Series De Accion
+						else if($_REQUEST['serial']=="7870"){
+						echo "Mu&ntilde;eco De Accion "."<font color = 'Blue'>"."Series De Accion"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Peliculas
+						else if($_REQUEST['serial']=="7880"){
+						echo "Mu&ntilde;eco De Accion "."<font color = 'Blue'>"."Peliculas"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Serie De Television
+						else if($_REQUEST['serial']=="7890"){
+						echo "Mu&ntilde;eco De Accion "."<font color = 'Blue'>"."Serie De Television"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Super Heroes
+						else if($_REQUEST['serial']=="7900"){
+						echo "Mu&ntilde;eco De Accion "."<font color = 'Blue'>"."Super Heroes"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="20000"){
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"20000"){
+						$a = $_REQUEST['pago']-20000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"20000"){				
+						$a = $_REQUEST['pago']-20000;
+						
+						echo "<br><br>";
+						echo "Impuesto copyright del mu&ntilde;eco: 5000<br>";
+						echo "Montaje del mu&ntilde;eco:            5000<br>";
+						echo "Mano factura:                  5000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             20000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				
+						else if($_REQUEST['serial']<"7999"){
+							echo"Producto No Encontrado<br>";	
+						}
+						
+						else if($_REQUEST['serial']<"8809"){
+							echo"Producto No Encontrado<br>";	
+						}
+						
+						//Muñecos Inteligentes	
+						//Robot
+						else if($_REQUEST['serial']=="8810"){
+						echo "<br>Mu&ntilde;eco Inteligentes "."<font color = 'Blue'>"."Robot"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="30000"){
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"30000"){
+						$a = $_REQUEST['pago']-30000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"30000"){
+							
+						$a = $_REQUEST['pago']-30000;
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Muñeca Sintetica
+						else if($_REQUEST['serial']=="8820"){
+						echo "Mu&ntilde;eco Inteligentes "."<font color = 'Blue'>"."Muñeca Sintetica"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="30000"){
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"30000"){
+						$a = $_REQUEST['pago']-30000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"30000"){				
+						$a = $_REQUEST['pago']-30000;
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Mi amiga Cayla
+						else if($_REQUEST['serial']=="8830"){
+						echo "Mu&ntilde;eco Inteligentes "."<font color = 'Blue'>"."Mi amiga Cayla"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="30000"){
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"30000"){
+						$a = $_REQUEST['pago']-30000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"30000"){				
+						$a = $_REQUEST['pago']-30000;
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Perro Robotico
+						else if($_REQUEST['serial']=="8840"){
+						echo "Mu&ntilde;eco Inteligentes "."<font color = 'Blue'>"."Perro Robotico"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="30000"){
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"30000"){
+						$a = $_REQUEST['pago']-30000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"30000"){				
+						$a = $_REQUEST['pago']-30000;
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Gato Robotico
+						else if($_REQUEST['serial']=="8850"){
+						echo "Mu&ntilde;eco Inteligentes "."<font color = 'Blue'>"."Gato Robotico"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="30000"){
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"30000"){
+						$a = $_REQUEST['pago']-30000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"30000"){				
+						$a = $_REQUEST['pago']-30000;
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Robot De Accion
+						else if($_REQUEST['serial']=="8860"){
+						echo "Mu&ntilde;eco Inteligentes "."<font color = 'Blue'>"."Robot De Accion"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="30000"){
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"30000"){
+						$a = $_REQUEST['pago']-30000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"30000"){				
+						$a = $_REQUEST['pago']-30000;
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Robot Bailarin
+						else if($_REQUEST['serial']=="8870"){
+						echo "Mu&ntilde;eco Inteligentes "."<font color = 'Blue'>"."Robot Bailarin"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="30000"){
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"30000"){
+						$a = $_REQUEST['pago']-30000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"30000"){				
+						$a = $_REQUEST['pago']-30000;
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Robot Armable
+						else if($_REQUEST['serial']=="8880"){
+						echo "Mu&ntilde;eco Inteligentes "."<font color = 'Blue'>"."Robot Armable"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="30000"){
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"30000"){
+						$a = $_REQUEST['pago']-30000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"30000"){				
+						$a = $_REQUEST['pago']-30000;
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Robot Cariñoso
+						else if($_REQUEST['serial']=="8890"){
+						echo "Mu&ntilde;eco Inteligentes "."<font color = 'Blue'>"."Robot Cariñoso"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="30000"){
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"30000"){
+						$a = $_REQUEST['pago']-30000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"30000"){				
+						$a = $_REQUEST['pago']-30000;
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				        //Bebe Robot
+						else if($_REQUEST['serial']=="8900"){
+						echo "Mu&ntilde;eco Inteligentes "."<font color = 'Blue'>"."Bebe Robot"."</font>"."<br>";
+								
+						if($_REQUEST['pago']=="30000"){
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+						}
+								
+						else if($_REQUEST['pago']<"30000"){
+						$a = $_REQUEST['pago']-30000;
+						echo "Hubo Un Error En La Compra<br>";
+						echo "Faltaron ".$a." Para Poder Comprar el Producto"."<br>";
+						}
+								
+						else if($_REQUEST['pago']>"30000"){				
+						$a = $_REQUEST['pago']-30000;
+						
+						echo "<br><br>";
+						echo "Montaje del Mu&ntilde;eco:           10000<br>";
+						echo "Mano factura:                 15000<br>";
+						echo "Envio:                         5000<br>";
+						echo "------------------------------------<br>";
+						echo "Para un total de:             30000<br>";
+						
+						echo "<br>Sobraron ".$a." De la Comprar Del Producto"."<br>";
+						
+						echo "<br><br>Con uno de estos 4 c&oacute;digos puedes reclamar tu producto en los diferentes<br>"; 
+						echo "almacenes de la mu&ntilde;equer&iacute;a chuky al hacer el reclamo del producto en lo <br>almacenes"; 
+						echo " se le regresaran el cr&eacute;dito del envi&oacute;<br><br>";
+
+						echo "Chico: ";
+						echo "<font color = 'blue'>"; 
+						echo Chico(10);
+						echo "</font><br>";
+
+						echo "Kenedy: ";
+						echo "<font color = 'blue'>"; 
+						echo Kenedy(10);
+						echo "</font><br>";
+
+						echo "Tunal: ";
+						echo "<font color = 'blue'>"; 
+						echo Tunal(10);
+						echo "</font><br>";
+
+						echo "Unicentro: ";
+						echo "<font color = 'blue'>"; 
+						echo Unicentro(10);
+						echo "</font><br><br>";
+
+						echo "Dirreciones De Locales";
+						echo "<li>"."Barrio Chico = "." Carrera 7 #93-01"."<br></li>";
+						echo "<li>"."Barrio Kenedy = "."Calle 38B Sur #73C-99"."<br></li>";
+						echo "<li>"."Centro Comercial Tunal = "."Carrera 24 Con Calle 47 Sur"."<br></li>";
+						echo "<li>"."Centro Comercial Unicentro = "."Carrera 15 #124-30"."<br></li>";
+					}
+				}
+				
+					else{
+						echo"Producto No Encontrado<br>";	
+					}
+					
+					
+				//Codigo De Reclamo
+			function kenedy($longitud) {
+								$key = '';
+								$pattern = '1234567890K';
+ 								$max = strlen($pattern)-1;
+ 								for($i=0;$i < $longitud;$i++) $key .= $pattern{mt_rand(0,$max)};
+ 								return $key;
+							}
+
+			function Chico($longitud) {
+ 								$key = '';								 
+								$pattern = '1234567890C';
+ 								$max = strlen($pattern)-1;
+ 								for($i=0;$i < $longitud;$i++) $key .= $pattern{mt_rand(0,$max)};
+ 								return $key;
+							}
+
+			function Unicentro($longitud) {
+ 								$key = '';
+ 								$pattern = '1234567890U';
+ 								$max = strlen($pattern)-1;
+ 								for($i=0;$i < $longitud;$i++) $key .= $pattern{mt_rand(0,$max)};
+ 								return $key;
+							}
+
+			function Tunal($longitud) {
+ 								$key = '';
+ 								$pattern = '1234567890T';
+ 								$max = strlen($pattern)-1;
+ 								for($i=0;$i < $longitud;$i++) $key .= $pattern{mt_rand(0,$max)};
+ 								return $key;
+							}
+		?>
+		
+		<br>
+		<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,228 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>HOME SERVIS Servicio Normal</title>
+  <link rel = "StyleSheet" href = "Complementos\Css\PaginaN.css" type = "text/css">
+  <link rel = "icon" type = "image/png" href = "Complementos\Imagenes\Icono.png" />
+</head>
+<body>
+
+	<?php if(!empty($user)): ?>
+	
+	<input type = "checkbox" id = "btn-nav" class = "checkbox">
+	
+    <header>
+      <div class = "header-container">
+        <img class = "header-logo" src = "Complementos\Imagenes\Hs.png " id = "lo">
+        <label for = "btn-nav" class = "btn-label">
+          <div class = "header-button"></div>
+        </label>
+      </div>	  
+    </header>
+	
+    <nav class="menu">
+      <ul>		
+		<center><img src = "Complementos\Imagenes\Bienvenidos.png" id = "lo"></center>		
+        <tr><td><center><?= "<p>"."Usuario "."<font color = 'blue'>".$user['nombre']." ".$user['apellido']."</font>"." con el numero de ciudadana "."<font color = 'blue'>".$user['cedula']."</font><br>"."numero personal "."<font color = 'blue'>".$user['numero']."</font>"." direccion del hogar "."<font color = 'blue'>".$user['direcion']."</font><br>"." y correo personal "."<font color = 'blue'>".$user['email']."</font></p>"?></center>	
+		
+		<br>
+		
+		<form action = "logout.php" method = "post">
+        <input type = "submit" value = "Cerrar Sesion">
+		</form>	
+      </ul>    	  
+    </nav>		
+	
+	<br>
+	<br>
+
+<center><img src = "Complementos\Imagenes\Home_Servis.png"></center>
+
+<br>
+
+		<div id="header">
+			<nav>
+				<ul class="nav">
+					<li><a href="Index.php"><center>Inicio</center></a></li>
+					<li><a href=""><center>Tipos De Servicios </center></a>
+						<ul>
+							
+							<li><a href="Servicio_Normal.php"><center>Servicio Normal</center></a></li>
+							<li><a href="Servicio_Eficaz.php"><center>Servicio Eficaz</center></a></li>
+						</ul>
+					</li>
+					<li><a href="">Nos encuentras</a>
+						<ul>
+							<li><a href="Zonas.php">Barrio Chico</a></li>
+							<li><a href="Zonas.php">Barrio Kennedy</a></li>
+							<li><a href="Zonas.php">Barrio Tunal</a></li>
+							<li><a href="Zonas.php">Barrio Unicentro</a></li>
+							
+						</ul>
+					</li>
+					<li><a href="Comprar.php"  target="_blank"><center><font color = "red">C</font><font color = "blue">o</font><font color = "gree">m</font><font color = "purple">p</font><font color = "yellow">r</font><font color = "orange">a</font><font color = "pink">r</font></center></a></li>
+				</ul>
+			</nav>
+			<br>
+		</div>
+
+<center>
+
+<br>
+<br>
+<br>
+
+<table border="1">
+<caption Id = "caption2"><img src = "Complementos\Imagenes\Servicio_Eficaz.png"></caption>
+<tr><th rowspan="2">Tipo</th></tr>
+<th><center>Servicio<br>Aseo General</center></a></th>
+<th><center>Servicio<br>electrisista</center></a></th>
+<th><center>servicio<br>Pintura</center></a></th>
+<th><center>servicio<br>Fontaneria</center></a></th>
+<th><center>Servicio<br>cerrageria</center></a></th>
+
+<tr><th rowspan="2"> </th></tr>
+<td><a href="Complementos\Paginas\SNormal\Aseo_General.html"  target="_blank/" /><img src = "Complementos\Mercancia\SNormal\servicio_aseo_general.jpg" width = 150 height = 150></td>
+<td><a href="Complementos\Paginas\SNormal\Electrisista.html"  target="_blank/" /><img src = "Complementos\Mercancia\SNormal\servicio_electrisista.jpg" width = 150 height = 150></td>
+<td><a href="Complementos\Paginas\SNormal\Pintura.html"  target="_blank/" /><img src = "Complementos\Mercancia\SNormal\servicio_pintura.jpg" width = 150 height = 150></td>
+<td><a href="Complementos\Paginas\SNormal\Fontaneria.html"  target="_blank/" /><img src = "Complementos\Mercancia\SNormal\servicio_fontaneria.jpg" width = 150 height = 150></td>
+<td><a href="Complementos\Paginas\SNormal\Cerrageria.html"  target="_blank/" /><img src = "Complementos\Mercancia\SNormal\servicio_cerrageria.jpg" width = 150 height = 150></td>
+
+<tr><th rowspan="2">Codigo Servicio</th></tr>
+<td><center><font color = "blue">60158</center></font></td>
+<td><center><font color = "blue">60259</center></font></td>
+<td><center><font color = "blue">60514</center></font></td>
+<td><center><font color = "blue">60369</center></font></td>
+<td><center><font color = "blue">60507</center></font></td>
+
+
+
+</table>
+
+<br>
+
+
+<br>
+<br>
+<br>
+
+<footer id = "pie">
+          PROYECTO HOME SERVIS &copy;<br>
+		 Nikole Dayan Herrera Nu&ntildeez, Daniel Fernando Aranda, Cristian Villa
+        </footer> 
+		
+</center>
+
+	<?php else: ?>		
+		
+	<input type = "checkbox" id = "btn-nav" class = "checkbox">
+	
+    <header>
+      <div class = "header-container">
+        <img class = "header-logo" src = "Complementos\Imagenes\Hs.png" id = "lo">
+        <label for = "btn-nav" class = "btn-label">
+          <div class = "header-button"></div>
+        </label>
+      </div>	  
+    </header>
+		
+	
+    <nav class = "menu">
+      <ul>
+		<center><img src = "Complementos\Imagenes\Inicio_Registro.jpg" id = "lo"></center>
+		
+		<form method = "" action = "Seccion.php">
+        <input type = "submit" name = "operar" value = "Iniciar Sesion">
+		</form>
+		
+		<form method = "" action = "Registro.php">
+		<input type = "submit" name = "operar" value = "Registrar">
+		</form>	
+      </ul>       
+    </nav>
+	
+	<br>
+	<br>
+
+	<center><img src = "Complementos\Imagenes\Home_Servis.png"></center>
+
+<br>
+
+		<div id="header">
+			<nav>
+				<ul class="nav">
+					<li><a href="Index.php"><center>Inicio</center></a></li>
+					<li><a href=""><center>Tipos De Servicios </center></a>
+						<ul>
+							
+							<li><a href="Servicio_Normal.php"><center>Servicio Normal</center></a></li>
+							<li><a href="Servicio_Eficaz.php"><center>Servicio Eficaz</center></a></li>
+						</ul>
+					</li>
+					<li><a href="">Nos encuentras</a>
+						<ul>
+							<li><a href="Zonas.php">Barrio Chico</a></li>
+							<li><a href="Zonas.php">Barrio Kennedy</a></li>
+							<li><a href="Zonas.php">Barrio Tunal</a></li>
+							<li><a href="Zonas.php">Barrio Unicentro</a></li>
+							
+						</ul>
+					</li>
+					<li><a href=""><center>Contacto</center></a></li>
+				</ul>
+			</nav>
+			<br>
+		</div>
+
+<center>
+
+<br>
+<br>
+<br>
+
+<table border="1">
+<caption Id = "caption2"><img src = "Complementos\Imagenes\Servicio_Eficaz.png"></caption>
+<tr><th rowspan="2">Tipo</th></tr>
+<th><center>Servicio<br>Aseo General</center></a></th>
+<th><center>Servicio<br>electrisista</center></a></th>
+<th><center>servicio<br>Pintura</center></a></th>
+<th><center>servicio<br>Fontaneria</center></a></th>
+<th><center>Servicio<br>cerrageria</center></a></th>
+
+<tr><th rowspan="2"> </th></tr>
+<td><a href="Complementos\Paginas\SNormal\Aseo_General.html"  target="_blank/" /><img src = "Complementos\Mercancia\SNormal\servicio_aseo_general.jpg" width = 150 height = 150></td>
+<td><a href="Complementos\Paginas\SNormal\Electrisista.html"  target="_blank/" /><img src = "Complementos\Mercancia\SNormal\servicio_electrisista.jpg" width = 150 height = 150></td>
+<td><a href="Complementos\Paginas\SNormal\Pintura.html"  target="_blank/" /><img src = "Complementos\Mercancia\SNormal\servicio_pintura.jpg" width = 150 height = 150></td>
+<td><a href="Complementos\Paginas\SNormal\Fontaneria.html"  target="_blank/" /><img src = "Complementos\Mercancia\SNormal\servicio_fontaneria.jpg" width = 150 height = 150></td>
+<td><a href="Complementos\Paginas\SNormal\Cerrageria.html"  target="_blank/" /><img src = "Complementos\Mercancia\SNormal\servicio_cerrageria.jpg" width = 150 height = 150></td>
+
+<tr><th rowspan="2">Codigo Servicio</th></tr>
+<td><center><font color = "blue">60158</center></font></td>
+<td><center><font color = "blue">60259</center></font></td>
+<td><center><font color = "blue">60514</center></font></td>
+<td><center><font color = "blue">60369</center></font></td>
+<td><center><font color = "blue">60507</center></font></td>
+
+
+</table>
+
+<br>
+
+<br>
+<br>
+<br>
+
+<footer id = "pie">
+          PROYECTO HOME SERVIS &copy;<br>
+		  Nikole Dayan Herrera Nu&ntildeez, Daniel Fernando Aranda, Cristian Villa 
+        </footer> 
+		
+</center>
+	
+<?php endif; ?>		
+	
+</body>
+
+</html>

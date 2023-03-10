@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BIENVENIDOS A HOME SERVIS</title>
+	<meta charset = "UTF-8">
+    <link rel = "StyleSheet" href = "Complementos\Css\StiloP.css" type = "text/css">
+	<link rel = "icon" type = "image/png" href = "Complementos\Imagenes\Icono.png"/>
+</head>
+
+<body>
+
+	<?php if(!empty($user)): ?>
+	
+	<input type = "checkbox" id = "btn-nav" class = "checkbox">
+	
+    <header>
+      <div class = "header-container">
+        <img class = "header-logo" src = "Complementos\Imagenes\Hs.png " id = "lo">
+        <label for = "btn-nav" class = "btn-label">
+          <div class = "header-button"></div>
+        </label>
+      </div>	  
+    </header>
+	
+    <nav class="menu">
+	<table border = "0">
+      <ul>		
+		<center><img src = "Complementos\Imagenes\Bienvenidos.png" id = "lo"></center>		
+        <tr><td><center><?= "<p>"."Usuario "."<font color = 'blue'>".$user['nombre']." ".$user['apellido']."</font>"." con el numero de ciudadana "."<font color = 'blue'>".$user['cedula']."</font><br>"."numero personal "."<font color = 'blue'>".$user['numero']."</font>"." direccion del hogar "."<font color = 'blue'>".$user['direcion']."</font><br>"." y correo personal "."<font color = 'blue'>".$user['email']."</font></p>"?></center></td></tr>
+		</form>		
+		<form action = "logout.php" method = "post">
+        <tr><td><input type = "submit" value = "Cerrar Sesion">	</td></tr>
+		</form>	
+      </ul>     	  
+	  </table>	  
+    </nav>		
+	
+	<br>
+	<br>
+	
+	
+	
+	
+	
+	<br>
+	
+	<div class = "slider">
+			<ul>
+				<li><img src = "Complementos\Imagenes\1.jpg" alt = "" width = 250 height = 370></li>
+				<li><img src = "Complementos\Imagenes\2.jpg" alt = "" width = 250 height = 370></li>
+				<li><img src = "Complementos\Imagenes\3.jpg" alt = "" width = 250 height = 370></li>
+				<li><img src = "Complementos\Imagenes\4.jpg" alt = "" width = 250 height = 370 ></li>
+			</ul>
+		</div>	
+
+			<br>
+		
+		<div id="header">
+			<nav>
+				<ul class="nav">
+					<li><a href="Index.php"><center>Inicio</center></a></li>
+					<li><a href=""><center>Tipos de Servicios</center></a>
+						<ul>
+							<li><a href="Servicio_Normal.php"><center>Servicio Normal</center></a></li>
+							<li><a href="Servicio_Eficaz.php"><center>Servicio Eficaz</center></a></li>
+							
+						</ul>
+					</li>
+					<li><a href="">Zonas</a>
+						<ul>
+							<li><a href="Zonas.php">Barrio Chico</a></li>
+							<li><a href="Zonas.php">Barrio Kennedy</a></li>
+							<li><a href="Zonas.php">Tunal</a></li>
+							<li><a href="Zonas.php">Unicentro</a></li>
+
+						</ul>
+					</li>
+					<li><a href="Comprar.php"  target="_blank"><center><font color = "red">C</font><font color = "blue">o</font><font color = "gree">m</font><font color = "purple">p</font><font color = "yellow">r</font><font color = "orange">a</font><font color = "pink">r</font></center></a></li>
+				</ul>
+			</nav>
+			<br>
+		</div>
+
+		<br>
+		<br>
+		<br>
+		<br>
+		
+	<center>
+	
+	<table border = "0" id = "marco">
+		<tr>
+		<td><center><h1><p>Bienvenido</p></h1></center><br></td>
+		</tr>
+		
+		<tr>
+		<td><center><p><u>Aqu&iacute; hay unos tips para moverte en nuestro aplicativo web.</u></p></center><br></td>
+		</tr>
+		
+		<tr>
+		<td><center><p>Puedes ver  los mu&ntilde;ecos que tenemos hasta ahora en nuestra p&aacute;gina y almacenes<br>
+		dale a barra y desplegara 4 opciones de diferentes de mu&ntilde;ecos<br>
+		</p></center><br></td>
+		</tr>
+		
+		<tr>
+		<td><center><p>Para poder comprar nuestros mu&ntilde;ecos tiene que tener una cuanta o registrarte.</p></center><br>
+		
+		<center><p><i><font color = "red">&iquest;</font>Para que una cuenta<font color = "red">?</font></p>
+		<p>Para poder hacer seguimiento de tus comprar y complacer al comprador <br>
+		los datos dado  por el comprador no  se revelar&aacute; a personas desconocidas <br>
+		solo a agentes oficial por si un robo o peligro de informaci&oacute;n.</i></p></center><br></td>
+		</tr>
+		
+		<tr>
+		<td><center><p>La tienda chuky es conocida por su modo de comprar no solo por su gran<br>seguridad de comprar y recogida de objetos comprados tanto por la p&aacute;gina y<br>en las diferentes tiendas de la franquicia chuky</p></center><br></td>
+		</tr>
+		
+		<tr>
+		<td><center><p>Dirreciones de las diferentes tiendas en diferente lugares de Bogot&aacute;</p></center></td>
+		</tr>
+		
+		<tr>
+		<td><br><center><p>Barrio Chico: Carrera 7 #93-01<br>
+		<img src = "Complementos\Imagenes\Chico.jpg" width = 650 height = 350 id = "lo"></center></td>
+		</tr>
+		
+		<tr>
+		<td><br><center><p>Barrio Kennedy: Calle 38B Sur #73C-9<br>
+		<img src = "Complementos\Imagenes\Kennedy.jpg" width = 650 height = 350 id = "lo"></center></td>
+		</tr>
+		
+		<tr>
+		<td><br><center><p>Centro Comercial Tunal: Carrera 24 Con Calle 47 Sur<br>
+		<img src = "Complementos\Imagenes\Tunal.jpg" width = 650 height = 350 id = "lo"></center></td>
+		</tr>
+		
+		<tr>
+		<td><br><center><p>Centro Comercial Unicentro: Carrera 15 #124-30<br>
+		<img src = "Complementos\Imagenes\Unicentro.jpg" width = 650 height = 350 id = "lo"></center></td>
+		</tr>
+		
+		</table>
+	
+	</center>
+	<footer id = "pie">
+          PROYECTO HOME SERVIS &copy;<br>
+		 Nikole Dayan Herrera Nu&ntildeez, Daniel Fernando Aranda, Cristian Villa
+        </footer> 
+	
+		<br>
+		<br>		
+	
+	<?php else: ?>	
+	
+	<section class = "contenido">
+	
+    <input type = "checkbox" id = "btn-nav" class = "checkbox">
+	
+    <header>
+      <div class = "header-container">
+        <img class = "header-logo" src = "Complementos\Imagenes\Hs.png" id = "lo">
+        <label for = "btn-nav" class = "btn-label">
+          <div class = "header-button"></div>
+        </label>
+      </div>	  
+    </header>
+	
+    <nav class = "menu">
+	<table border = "0">
+      <ul>
+		<center><img src = "Complementos\Imagenes\Inicio_secion_Registro.png" id = "lo"></center>
+		
+		<form method = "" action = "Seccion.php">
+        <tr><td><input type = "submit" name = "operar" value = "Iniciar Sesion"></td></tr>
+		</form>
+		
+		<form method = "" action = "Registro.php">
+        <tr><td><input type = "submit" name = "operar" value = "Registrar"></td></tr>
+		</form>	
+      </ul>     	  
+	  </table>	  
+    </nav>
+	
+	<br>
+	<br>
+	
+	<br>
+	<br>
+	<br>
+	<center><img src = "Complementos\Imagenes\Home_Servis.png"></center>
+	
+	<br>
+	
+	<div class = "slider">
+			<ul>
+				<li><img src = "Complementos\Imagenes\1.jpg" alt = "" width = 250 height = 370></li>
+				<li><img src = "Complementos\Imagenes\2.jpg" alt = "" width = 250 height = 370></li>
+				<li><img src = "Complementos\Imagenes\3.jpg" alt = "" width = 250 height = 370></li>
+				<li><img src = "Complementos\Imagenes\4.jpg" alt = "" width = 250 height = 370 ></li>
+			</ul>
+		</div>	
+
+			<br>
+	
+			<div id="header">
+			<nav>
+				<ul class="nav">
+					<li><a href="Index.php"><center>Inicio</center></a></li>
+					<li><a href=""><center>Tipos De Servicios </center></a>
+						<ul>
+							<li><a href="Servicio_Normal.php"><center>Servicio Normal</center></a></li>
+							<li><a href="Servicio_Eficaz.php"><center>Servicio Eficaz</center></a></li>
+							
+						</ul>
+					</li>
+					<li><a href="">Nos encuentras</a>
+						<ul>
+							<li><a href="Zonas.php">Barrio Chico</a></li>
+							<li><a href="Zonas.php">Barrio Kennedy</a></li>
+							<li><a href="Zonas.php">Barrio Tunal</a></li>
+							<li><a href="Zonas.php">Barrio Unicentro</a></li>
+							
+						</ul>
+					</li>
+					<li><a href=""><center>Contacto</center></a></li>
+				</ul>
+			</nav>
+			<br>
+		</div>
+		
+		<br>
+		<br>
+		
+	<center>
+	
+	<table border = "0" id = "marco">
+		<tr>
+		<td><center><h1><p>Bienvenido</p></h1></center><br></td>
+		</tr>
+		
+		<tr>
+		<td><center><p><u>Aqu&iacute; hay unos tips para moverte en nuestro aplicativo web.</u></p></center><br></td>
+		</tr>
+		
+		<tr>
+		<td><center><p>Puedes ver  los dos diferentes servicios que te ofreceremos; estos servicios estan adecuados perfectamente para la necesidad de cada uno de ustedes. <br>
+		</p></center><br></td>
+		</tr>
+		
+		<tr>
+		<td><center><p>Para acceder a nuestro servicio es necesario que tengas una cuenta o te reguistres para adquirir una cuenta.</p></center><br>
+		
+		<center><p><i><font color = "red">&iquest;</font>Para que una cuenta<font color = "red">?</font></p>
+		<p>Para poder hacer seguimiento de tus necesidades de servicios mas frecuentes y complacer al cliente con nuestro servicio. <br>
+		los datos dados por el cliente no  se revelar&aacute; a personas desconocidas <br>
+		solo a agentes oficial por algun robo o peligro de informaci&oacute;n.</i></p></center><br></td>
+		</tr>
+		
+		<tr>
+		<td><center><p>El servicio HOME SERVIS esta enfocado en prestarle un servicio de calidad y <br>seguridad de los diferentes servicios que requieran al solicitar nuestros servicios atraves de esta pagina web o atravez de la app movil que estara disponible para PlayStor,Windows.<br>Nuestro servicio lo podran adquirir en la zonas en la que usted se encuentre.</p></center><br></td>
+		</tr>
+		
+		<tr>
+		<td><center><p>Estas son las Zonas en las que estamos trabajando:</p></center></td>
+		</tr>
+		
+		<tr>
+		<td><br><center><p>Barrio Chico: Carrera 7 #93-01<br>
+		<img src = "Complementos\Imagenes\Chico.jpg" width = 650 height = 350 id = "lo"></center></td>
+		</tr>
+		
+		<tr>
+		<td><br><center><p>Barrio Kennedy: Calle 38B Sur #73C-9<br>
+		<img src = "Complementos\Imagenes\Kennedy.jpg" width = 650 height = 350 id = "lo"></center></td>
+		</tr>
+		
+		<tr>
+		<td><br><center><p>Barrio Tunal: Carrera 24 Con Calle 47 Sur<br>
+		<img src = "Complementos\Imagenes\Tunal.jpg" width = 650 height = 350 id = "lo"></center></td>
+		</tr>
+		
+		<tr>
+		<td><br><center><p>Barrio Unicentro: Carrera 15 #124-30<br>
+		<img src = "Complementos\Imagenes\Unicentro.jpg" width = 650 height = 350 id = "lo"></center></td>
+		</tr>
+		
+		</table>
+	
+	</center>
+	<br>
+	<br>
+	<center>
+	<footer id = "pie">
+          PROYECTO HOME SERVIS &copy;<br>
+		 Nikole Dayan Herrera Nu&ntildeez, Daniel Fernando Aranda, Cristian Villa
+        </footer> 
+	
+		<br>
+		<br>
+<?php endif; ?>	
+
+  </body>
+</html>
+
+</body>
+</html>

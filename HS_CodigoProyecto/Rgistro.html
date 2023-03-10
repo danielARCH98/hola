@@ -1,0 +1,62 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Registro</title>	
+		<meta charset="UTF-8">
+		<link rel = "stylesheet" href = "Complementos\Css\Entra_Re.css" type = "text/css">
+		<link rel = "icon" type = "image/png" href = "Complementos\Imagenes\Icono.png" />
+	</head>
+
+	
+	<body><center><img src = "Complementos\Imagenes\Home_Servis.png"></center>
+	<h1>Registrate</h1>
+	
+	<?php if(!empty($message)): ?>
+      <p><?= $message ?>
+	  <a href = "Seccion.php" id = "bc"><br>Iniciar Sesi&oacute;n</a></p>
+	  <br><p>Quieres Regresar a la<a href = "Index.php" id = "bc"><br>Pagina Principal<br></a></p><br>
+	
+	<?php else:?>	
+	<br><p>Si ya tienes una cuenta creada <br>por favor acceder a ella<a href = "Seccion.php" id = "bc"><br>Iniciar Sesi&oacute;n</a></p>
+	
+	<br><p>Quieres Regresar a la<a href = "Index.php" id = "bc"><br>Pagina Principal</a></p>	
+	<?php endif; ?>
+	
+	<center>
+	
+	
+	<form method = "POST" action = "Registro.php" id = "marco">
+	
+	<table border = "0">
+	
+	<tr>
+			<td><center>Cedula</center><center><input type = "text" name = "cedula" placeholder = "Ejemplo: 1033813070" pattern = "[0-9]{1,10}" id = "p1" autofocus required></center></td>
+			<td><center>Celular o Telefono</center><center><input type = "text" name = "numero" placeholder = "Ejemplo: 3105507981" pattern = "[0-9]{1,10}" id = "p1" required></center></td>
+	</tr>
+	
+	<tr>
+			<td><center>Nombre</center><input type = "text" name="nombre" placeholder = "Ejemplo: Jose Alfonso" id = "p1" required></td>
+			<td><center>Apellido</center><input type = "text" name="apellido" placeholder = "Ejemplo: Domingez Herrera" id = "p1" required></td>
+	</tr>
+	
+	<tr>
+			<td><center>Dirrecion</center><input type = "text" name="direcion" placeholder = "Ejemplo: Calle 50 Sur #29:79" id = "p1" required></td>
+			<td><center>Correo</center><input type = "email" name="email" placeholder = "Ejemplo: Ejem52@hotmail.com" id = "p1" required></td>
+	</tr>
+	
+	<tr>
+			<td><center>Contrase&ntildea</center><input type = "password" name = "password" placeholder = "Ejemplo: abc123Abc" id = "p1" required></td>
+			<td><center>Confirma Contraseña</center><input type = "password" name = "confirm_password" placeholder = "Ejemplo: abc123Abc" id = "p1" required></td>
+	</tr>
+	
+	<tr>
+			<td colspan = "2"><center><input type = "submit" value = "Registrar"></center></td>
+	</tr>
+	
+	</center>
+	
+	</table>
+</body>
+</html>

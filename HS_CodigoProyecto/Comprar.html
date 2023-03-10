@@ -1,0 +1,97 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Carrito De Compras</title>	
+		<meta charset="UTF-8">
+		<link rel = "stylesheet" href = "Complementos\Css\Compra.css" type = "text/css">
+		<link rel = "icon" type = "image/png" href = "Complementos\Imagenes\Icono.ico" />
+	</head>
+	
+	<body>
+	
+	<?php if(!empty($user)): ?>
+	
+	<input type = "checkbox" id = "btn-nav" class = "checkbox">
+	
+    <header>
+      <div class = "header-container">
+        <img class = "header-logo" src = "Complementos\Imagenes\Cass.jpg " id = "lo">
+        <label for = "btn-nav" class = "btn-label">
+          <div class = "header-button"></div>
+        </label>
+      </div>	  
+    </header>
+	
+    <nav class="menu">
+	<table border = "0">
+      <ul>		
+		<center><img src = "Complementos\Imagenes\Bienvenido.jpg" id = "lo"></center>		
+        <tr><td><center><?= "<p>"."Usuario "."<font color = 'blue'>".$user['nombre']." ".$user['apellido']."</font>"." con el numero de ciudadana "."<font color = 'blue'>".$user['cedula']."</font><br>"."numero personal "."<font color = 'blue'>".$user['numero']."</font>"." direccion del hogar "."<font color = 'blue'>".$user['direcion']."</font><br>"." y correo personal "."<font color = 'blue'>".$user['email']."</font></p>"?></center></td></tr>
+		</form>		
+		<form action = "logout.php" method = "post">
+        <tr><td><input type = "submit" value = "Cerrar Sesion">	</td></tr>
+		</form>	
+      </ul>     	  
+	  </table>	  
+    </nav>	
+	
+	<center><img src = "Complementos\Imagenes\Munequeria_Chuky.jpg"></center>
+	
+	<br>
+	
+	<center>
+	
+	<table border = "0" id = "ml3">
+	
+	<tr>
+	<td><center><br>Para la comprar de los mu&ntilde;ecos deseado por favor poner el serial, cantidad de mu&ntilde;ecos que quiere comprar y el pago para los mu&ntilde;ecos.<br><br></center></td>
+	</tr>
+	
+	</table>
+	
+	<br>
+	
+	<form method="POST" action = "Recibo.php">
+	
+	<table border = "0" id = "marco">
+	
+	<tr>
+    <td><center>Ingrese El Serial<br><input type = "text" placeholder = "6072" name = "serial" pattern = "[0-9]{1,4}"  maxlength = "4" autofocus required id = "p1"></center></td>
+	
+    <td><center>Ingrese El Valor De Compra<br><input type = "text" placeholder = "25000" name = "pago" pattern = "[0-9]{1,7}" maxlength = "7" autofocus required id = "p1"></center></td>	
+	</tr>
+	
+	<tr>
+    <td colspan = "2"><center><input type = "submit" value = "Comprar"></center></td>
+	</tr>
+	
+	</table></center></form>
+	
+	<?php else: ?>	
+	
+	<center><img src = "Complementos\Imagenes\Munequeria_Chuky.jpg">
+	
+	<br>
+	
+	<h1>Carrito <br>de compras</h1></center>
+	
+	<br>
+	
+	<center>
+	
+	<table border = "0" id = "ml3">
+	
+	<tr>
+	<td><center>Si quieres Comprar en nuestra pagina tienes que tener una cuenta si no la tienes registrate o iniciar sesion con una ya registrada.<br></center></td>
+	</tr>
+	
+	</table>
+	
+	</center>
+	
+	<?php endif; ?>
+	
+</body>
+</html>
