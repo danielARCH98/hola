@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family: arial;
+	font-weight: bold;
+	text-align: center;
+	background: #CCCCCC;
+}
+
+
+#bc{
+	text-decoration: none;
+	color: red;
+}
+
+a{
+	text-decoration: none;
+	color: red;
+}
+
+header a{
+	text-decoration: none;
+	color: red;
+}
+
+#marco {
+	width: 490px; 
+	margin-left: 20px; 
+	margin-top: 1px;
+	border: 1px solid black;
+	border-radius: 45px;
+	padding: 10px;
+}
+
+#ml3 {
+	width: 490px; 
+	margin-left: 20px; 
+	margin-top: 1px;
+	border: 1px solid black;
+	border-radius: 45px;
+	padding: 10px;
+}
+
+#div1 {
+	width: 490px; 
+	margin-left: 20px; 
+	margin-top: 1px;
+	border: 1px solid black;
+	border-radius: 45px;
+	padding: 10px;
+}
+
+#p1{
+	outline: none;
+	padding: 10px;
+	display: block;
+	width: 200px;
+	border-radius: 100px;
+	border: 1px solid black;
+	margin: 10px auto;
+}
+
+input[type = "submit"]{
+	padding: 10px;
+	color: #fff;
+	background: #0098cb;
+	width: 320px;
+	margin: 20px auto;
+	margin-top: 0;
+	border: 0;
+	border-radius: 100px;
+	cursor: pointer;
+}
+
+input[type = "submit"]:hover{
+	background-color: #00b8eb;
+}
+
+/*Estilo texto*/
+p{
+  font-weight: bold;
+  font-family:arial;
+}
+
+/*Color Pagina*/
+body{
+  background: #CCCCCC;
+}
+
+/*Borde De Icono Pagina*/
+#lo{
+border-radius: 100px;
+}
+
+/*Ocultar El Checkbox*/
+.checkbox{
+  display: none;
+}
+
+/*Trasparencia De Barra Y Posicion*/
+header{
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+/*Posicion Del Boton En La Barra*/
+.header-container{
+  width: 90%;
+  position: relative;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*Tamaño Logo Barra*/
+.header-logo{
+  width: 6rem;
+}
+
+/*Accion Botton Barra*/
+.btn-label{
+  width: 2rem;
+  height: 1.4rem;
+}
+
+/*Velocidad Del Barra y Animacion Barra*/
+.header-button{
+  width: 2rem;
+  height: 0.2rem;
+  background: #000;
+  position: absolute;
+  top: 1.9rem;  
+  transition: all 0.9s;
+}
+
+/*Velocidad Del Boton y Animacion Barra*/
+.header-button::before, .header-button::after{
+  content: "";
+  width: 2rem;
+  height: 0.2rem;
+  background: #000;
+  position: absolute;
+  top: -0.6rem;
+  transition: all 0.2s;
+}
+
+
+/*Barra Y Boton*/
+.header-button::after{
+  top: 0.7rem;
+}
+
+/*Posicion De Barra,Boton Y Animacion*/
+.menu{
+  background: #B0ACAC;
+  width: 100%;
+  height: 12rem; 
+  position: fixed;
+  z-index: 1;
+  top: -20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  padding-top: 4rem;
+  transition: all 0.5s;
+}
+
+/*Esconder Puntos en la Pagina*/
+ul, ol {
+  list-style:none;
+}	
+
+/*Mostrar Barra*/
+.checkbox:checked ~ .menu{
+background: #7D7676;
+top: 0rem;
+}
+
+/*Animacion Barra*/
+.checkbox:checked + header .header-container label .header-button{
+background: none;
+
+}
+
+/*Animacion Barra*/
+.checkbox:checked + header .header-container label .header-button::before{
+transform: rotate(35deg);
+top: 0;
+}
+
+/*Animacion Barra*/
+.checkbox:checked + header .header-container label .header-button::after{
+transform: rotate(-35deg);
+top: 0;
+}
+
+/*Botton Registro*/
+input[type = "submit"]{
+	padding: 10px;
+	color: #fff;
+	background: #0098cb;
+	width: 300px;
+	margin: 20px auto;
+	margin-top: 0;
+	border: 0;
+	border-radius: 100px;
+	cursor: pointer;
+}
+
+/*Botton Registro*/
+input[type = "submit"]:hover{
+	background-color: #00b8eb;
+}
