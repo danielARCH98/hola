@@ -1,0 +1,19 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: arial;
+	font-weight: bold;
+	background: #307DCE;
+}
+
+p{
+	margin-bottom: 1em;
+}
+
+
+#imj{
+border-radius: 100px;
+}
